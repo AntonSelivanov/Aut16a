@@ -1,6 +1,6 @@
 function OmegaVal=LMI_Aut16a_prop1(A,B,K,h,etaM,alpha,sigma)
 % This MATLAB program checks the feasibility of LMIs from Proposition 1 of the paper 
-% A. Selivanov and E. Fridman, "Predictor-based networked control under uncertain transmission delays," Automatica, vol. 70, pp. 101–108, 2016.
+% A. Selivanov and E. Fridman, "Predictor-based networked control under uncertain transmission delays," Automatica, vol. 70, pp. 101â€“108, 2016.
 
 % The program uses YALMIP parser (http://users.isy.liu.se/johanl/yalmip/)
 % and SeDuMi solver (http://sedumi.ie.lehigh.edu/)
@@ -60,8 +60,8 @@ OmegaVal=[];
 if sol.problem == 0
     [primal,~]=check(LMIs); 
     if min(primal)>=0 && primal(2)>0 
-        OmegaVal=double(Omega); 
+        OmegaVal=value(Omega); 
     end
 else
-    yalmiperror(sol.problem); 
+    yalmiperror(sol.problem) 
 end
